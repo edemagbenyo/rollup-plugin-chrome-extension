@@ -73,12 +73,12 @@ export function deriveFiles(
     ...files.filter((f) => /\.html?$/.test(f)),
     get(manifest, 'background.page'),
     get(manifest, 'options_page'),
+    get(manifest, 'options_ui.page'),
     get(manifest, 'devtools_page'),
     get(manifest, 'browser_action.default_popup'),
     get(manifest, 'page_action.default_popup'),
     ...Object.values(get(manifest, 'chrome_url_overrides', {})),
   ]
-
   const css = [
     ...files.filter((f) => f.endsWith('.css')),
     ...get(
