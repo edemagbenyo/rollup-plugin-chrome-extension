@@ -15,7 +15,7 @@ import {
 } from './cheerio'
 
 /** CheerioStatic objects with a file path */
-export type CheerioFile = CheerioStatic & {
+export type CheerioFile = cheerio.Root & {
   filePath: string
 }
 

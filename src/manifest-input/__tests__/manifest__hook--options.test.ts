@@ -251,3 +251,15 @@ test('on second run and not cache.manifest, loads manifest from file system', as
   expect(cache.manifest).not.toEqual(manifest)
   expect(cache.manifest).toEqual(await readJSON(manifestJson))
 })
+
+test('throws an error if there is both options_page and options_ui in manifest',()=>{
+  const call = () => {
+    plugin.options.call(context, {
+      input: getExtPath('invalid-manifest-two-options/manifest.json'),
+    })
+  }
+  const error = new Error(
+    `You cannot include both options_page and options_ui in the same manifest.json file.`,
+  )
+  expect(call).toThrow(error)
+})
