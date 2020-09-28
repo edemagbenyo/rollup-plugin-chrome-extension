@@ -181,8 +181,14 @@ export function manifestInput(
         }
 
         manifestPath = configResult.filepath
+        const configOptions: string[] = Object.keys(configResult.config)
+        if(configOptions.includes('options_ui') && configOptions.includes('options_page')){
+          throw new Error(`You cannot include both options_page and options_ui in the same manifest.json file.`)
+        }
         cache.manifest = configResult.config
-
+        
+        
+        // const options = Object.keys(cache.manifest);
         cache.srcDir = path.dirname(manifestPath)
 
         // Derive entry paths from manifest
