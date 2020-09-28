@@ -1,0 +1,11 @@
+{
+  "name": "both-options",
+  "version": "1.0",
+  "description": "Includes both options pages and options ui",
+  "manifest_version": 2,
+  "options_page":"options.html",
+  "options_ui":{
+    "page":"options.html",
+    "open_in_tab": false
+  }
+}

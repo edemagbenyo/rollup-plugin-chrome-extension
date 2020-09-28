@@ -18,7 +18,7 @@ beforeAll(async () => {
     })
 
     if (!process.env.JEST_WATCH) {
-      await writeJSON(getExtPath('basic-build.json'), bundle, {
+      await writeJSON(getExtPath('options-ui-build.json'), bundle, {
         spaces: 2,
       })
     }
